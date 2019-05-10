@@ -1,0 +1,28 @@
+linhas por região
+
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 1 or reg2 = 1 or reg3 = 1)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 2 or reg2 = 2 or reg3 = 2)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 3 or reg2 = 3 or reg3 = 3)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 4 or reg2 = 4 or reg3 = 4)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 5 or reg2 = 5 or reg3 = 5)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 6 or reg2 = 6 or reg3 = 6)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 7 or reg2 = 7 or reg3 = 7)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 8 or reg2 = 8 or reg3 = 8)
+UNION
+SELECT count(id) FROM `linhas_regioes` where (reg1 = 9 or reg2 = 9 or reg3 = 9)
+
+numero de linhas por rua em cada regiao
+SELECT count(idlinha) from trajetos 
+inner join linhas_regioes on trajetos.idlinha = linhas_regioes.id
+where (reg1 = 1 or reg2 = 1 or reg3 = 1)
+group by idrua
+
+ruas de cada região
+SELECT distinct idrua from trajetos inner join linhas_regioes on trajetos.idlinha = linhas_regioes.id where (reg1 = 1 or reg2 = 1 or reg3 = 1)
